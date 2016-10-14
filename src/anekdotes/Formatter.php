@@ -14,7 +14,7 @@ class Formatter
      * Format everything in Formater according to rules.
      *
      * @param string[] $items Provided Input, contains key->values pair to be formatted
-     * @param array[]  $rules Formatting Rules to be used. The key represents the key of the Input to format. The value associated to said key is a list of strings representing which rules to use to format the input's value.
+     * @param array[]  $rules Formatting Rules to be used. The key represents the key of the Input to format. The value associated to said key is a list of strings representing which rules to use to format the input's value
      *
      * @return string[] The input given on formatter creation, now formatted
      */
@@ -135,7 +135,7 @@ class Formatter
     /**
      * Format the received value into a datetime string. Currently only checks if the value is empty.
      *
-     * @todo Format the actual string depending on the received object.
+     * @todo Format the actual string depending on the received object
      *
      * @param string $value The input string to format
      *
