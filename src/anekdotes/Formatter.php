@@ -59,6 +59,8 @@ class Formatter
      */
     public static function postalCode($value)
     {
+        $new = '';
+
         if (strlen($value) > 0) {
             $new = str_replace(' ', '', $value);
             $new = substr($value, 0, 3);
