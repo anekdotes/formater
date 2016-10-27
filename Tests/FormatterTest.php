@@ -396,4 +396,19 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => 'http://potato.com',
         ]);
     }
+
+    //Tests the chaining of a phone a an integer rule
+    public function testFormatterChainingPhoneInt()
+    {
+        $values = [
+          'foo' => '14504441919abcdeg',
+        ];
+        $rules = [
+          'foo' => ['int', 'phoneNumber'],
+        ];
+        $newValues = Formatter::make($values, $rules);
+        $this->assertEquals($newValues, [
+          'foo' => '1 (450) 444-1919',
+        ]);
+    }
 }

@@ -99,6 +99,13 @@ Append an http:// to a website.
 ```
 
 ## Combining Rules
+
+You can chain multiple rules to apply them on top of each other
 ```php
+    use Anekdotes\Formatter\Formatter;
+    $input = ["formPhoneNumber" => "1234567890abcsefg"];
+    $rules = ["formPhoneNumber" => ["int", "phoneNumber"]];
+    $formattedOutput = Formatter::make($input, $rules);
+    // $formattedOutput is now ["form" => "(123) 456-7890"]
 
 ```
