@@ -15,3 +15,62 @@ Utility to format whole Input using provided rules
 Install via composer into your project:
 
     composer require anekdotes/formatter
+
+## Usage
+
+    To use the formatter, include its namespace through Composer, then call its namespace and provide it with an data input and a rule input.
+
+    Exemple :
+
+```php
+    use Anekdotes\Formatter\Formatter;
+    $input = ["formPhoneNumber" => "1234567890"];
+    $rules = ["formPhoneNumber" => ["phoneNumber"]];
+    $formattedOutput = Formatter::make($input, $rules);
+    // $formattedOutput is now ["formPhoneNumber" => "(123) 456-7890"]
+
+```
+
+## Rules
+
+  Here's a list of the usable rules : 
+
+### postalCode
+```php
+
+```
+
+### phoneNumber
+```php
+
+```
+
+### float
+```php
+
+```
+
+### int
+```php
+
+```
+
+### integer
+```php
+
+```
+
+### datetime
+```php
+
+```
+
+### website
+```php
+
+```
+
+## Combining Rules
+```php
+
+```
