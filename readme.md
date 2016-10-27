@@ -76,7 +76,7 @@ Cuts the character following an integer
     $input = ["form" => "122.2abc"];
     $rules = ["form" => ["int"]];
     $formattedOutput = Formatter::make($input, $rules);
-    // $formattedOutput is now ["form" => "122"]
+    // $formattedOutput is now [form => "122"]
 ```
 
 ### integer
@@ -85,7 +85,7 @@ Cuts the character following an integer
     $input = ["form" => "122.2abc"];
     $rules = ["form" => ["integer"]];
     $formattedOutput = Formatter::make($input, $rules);
-    // $formattedOutput is now ["form" => "122"]
+    // $formattedOutput is now [form => "122"]
 ```
 
 ### website
