@@ -60,12 +60,13 @@ class Formatter
     public static function postalCode($value)
     {
         $new = '';
+        $clean = '';
 
         if (strlen($value) > 0) {
-            $new = str_replace(' ', '', $value);
-            $new = substr($value, 0, 3);
-            if (strlen($value) > 3) {
-                $new .= ' '.substr($value, 3, 3);
+            $clean = str_replace(' ', '', $value);
+            $new = substr($clean, 0, 3);
+            if (strlen($clean) > 3) {
+                $new .= ' '.substr($clean, 3, 3);
             }
             $new = Str::upper($new);
         }
