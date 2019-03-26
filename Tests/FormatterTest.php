@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Mailer package.
+ * This file is part of the Formatter package.
  *
  * (c) Anekdotes Communication inc. <info@anekdotes.com>
  *
