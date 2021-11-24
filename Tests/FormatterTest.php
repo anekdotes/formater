@@ -12,14 +12,15 @@
 namespace Tests;
 
 use Anekdotes\Formatter\Formatter;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class FormatterTest extends PHPUnit_Framework_TestCase
+final class FormatterTest extends TestCase
 {
     //Tests the make method of the formatter
     public function testFormatterMake1()
     {
         $formatter = Formatter::make([], []);
+
         $this->assertFalse($formatter);
     }
 
@@ -27,6 +28,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
     public function testFormatterMake2()
     {
         $formatter = Formatter::make('foo', 'bar');
+
         $this->assertFalse($formatter);
     }
 
@@ -34,6 +36,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
     public function testFormatterMake3()
     {
         $formatter = Formatter::make('foo', 'bar');
+
         $this->assertFalse($formatter);
     }
 
@@ -47,6 +50,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['phoneNumber'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '',
         ]);
@@ -62,6 +66,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['phoneNumber'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '450',
         ]);
@@ -77,6 +82,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['phoneNumber'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '450-4441',
         ]);
@@ -92,6 +98,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['phoneNumber'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '(450) 444-1919',
         ]);
@@ -107,6 +114,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['phoneNumber'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '1 (450) 444-1919',
         ]);
@@ -122,6 +130,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['phoneNumber'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '145 (044) 419-192',
         ]);
@@ -137,6 +146,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['postalCode'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => 'J4Y 2B4',
         ]);
@@ -152,6 +162,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['postalCode'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => 'J4Y',
         ]);
@@ -167,6 +178,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['postalCode'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => 'J4Y 2B4',
         ]);
@@ -182,6 +194,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['float'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '122.2',
         ]);
@@ -197,6 +210,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['float'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '0.0',
         ]);
@@ -212,6 +226,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['float'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '123',
         ]);
@@ -227,6 +242,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['int'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '123',
         ]);
@@ -242,6 +258,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['int'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '123',
         ]);
@@ -257,6 +274,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['int'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '123',
         ]);
@@ -272,6 +290,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['integer'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '123',
         ]);
@@ -287,6 +306,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['datetime'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '1231',
         ]);
@@ -302,6 +322,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['datetime'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => null,
         ]);
@@ -317,6 +338,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['int:1,2'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => '1',
         ]);
@@ -332,6 +354,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['website'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => 'http://www.potato.com',
         ]);
@@ -347,6 +370,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['website'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => 'http://potato.com',
         ]);
@@ -362,6 +386,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['website'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => 'http://www.potato.com',
         ]);
@@ -377,6 +402,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['website'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => 'http://www.potato.com',
         ]);
@@ -392,6 +418,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['website'],
         ];
         $newValues = Formatter::make($values, $rules);
+
         $this->assertEquals($newValues, [
           'foo' => 'http://potato.com',
         ]);
@@ -407,6 +434,7 @@ class FormatterTest extends PHPUnit_Framework_TestCase
           'foo' => ['int', 'phoneNumber'],
         ];
         $newValues = Formatter::make($values, $rules);
+        
         $this->assertEquals($newValues, [
           'foo' => '1 (450) 444-1919',
         ]);
